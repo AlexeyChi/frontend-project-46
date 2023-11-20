@@ -1,0 +1,15 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "Gendiff - cli utility to compare 2 config files and find difference",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "gendiff": "bin/gendiff.js",
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
