@@ -10,11 +10,11 @@ automatically tracking changes in
 configuration files.
 
 ##### Utility features:
--Supports different input formats: yaml, json
--Report generation as plain text, stylish and json
+ - Supports different input formats: yaml, json
+ - Report generation as plain text, stylish and json
 
 ### Play Demo
 
-#### #_Flat file comparison (JSON)_
+##### _Flat file comparison (JSON)_
 [![asciicast](https://asciinema.org/a/NuFvJNfCpknKd11TJiIxOpBPx.svg)](https://asciinema.org/a/NuFvJNfCpknKd11TJiIxOpBPx)
 
