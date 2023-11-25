@@ -1,4 +1,4 @@
-#Difference Calculator
+# Difference Calculator
 ---
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/AlexeyChi/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/AlexeyChi/frontend-project-46/actions)
@@ -9,12 +9,12 @@ online services, for example [http://www.jsondiff.com](http://www.jsondiff.com) 
 automatically tracking changes in 
 configuration files.
 
-#####Utility features:
+##### Utility features:
 -Supports different input formats: yaml, json
 -Report generation as plain text, stylish and json
 
-###Play Demo
+### Play Demo
 
-#####_Flat file comparison (JSON)_
+#### #_Flat file comparison (JSON)_
 [![asciicast](https://asciinema.org/a/NuFvJNfCpknKd11TJiIxOpBPx.svg)](https://asciinema.org/a/NuFvJNfCpknKd11TJiIxOpBPx)
 
