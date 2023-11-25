@@ -1,5 +1,5 @@
 plugins:
-  _ jest
+  - jest
 
 env:
   browser: true
