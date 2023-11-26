@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { listenerCount } from 'process';
 
 const makeFullPath = (filepath) => path.resolve(process.cwd(), '__fixtures__', filepath);
 const getData = (filepath) => fs.readFileSync(makeFullPath(filepath), 'utf-8');
