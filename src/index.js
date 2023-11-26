@@ -2,11 +2,11 @@ import fs from 'fs';
 import path from 'path';
 
 const makeFullPath = (filepath) => path.resolve(process.cwd(), '__fixtures__', filepath);
-const getData = (filepath) => fs.readFileSync(makeFullPath(filepath), 'utf-8');
+const feadFile = (filepath) => fs.readFileSync(makeFullPath(filepath), 'utf-8');
 
 const genDiff = (filepath1, filepath2) => {
-  const parsedFile1 = JSON.parse(getData(filepath1));
-  const parsedFile2 = JSON.parse(getData(filepath2));
+  const parsedFile1 = JSON.parse(feadFile(filepath1));
+  const parsedFile2 = JSON.parse(feadFile(filepath2));
 
   const keys1 = Object.keys(parsedFile1).sort();
   const keys2 = Object.keys(parsedFile2).sort();
