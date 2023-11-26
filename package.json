@@ -8,7 +8,11 @@
     "gendiff": "bin/gendiff.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexeyChi/frontend-project-46.git"
   },
   "author": "AlexeyChi",
   "license": "ISC",
