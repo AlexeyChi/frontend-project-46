@@ -1,7 +1,10 @@
 # Difference Calculator
 ---
 ### Hexlet tests and linter status:
-[![Actions Status](https://github.com/AlexeyChi/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/AlexeyChi/frontend-project-46/actions)
+[![Actions 
+Status](https://github.com/AlexeyChi/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/AlexeyChi/frontend-project-46/actions)  
+[![linter & jest 
+test](https://github.com/AlexeyChi/frontend-project-46/actions/workflows/jest.yml/badge.svg)](https://github.com/AlexeyChi/frontend-project-46/actions/workflows/jest.yml)
 
 ### Description
 A difference calculator is a program that determines the difference between two data structures. This is a popular task, for which there are many 
