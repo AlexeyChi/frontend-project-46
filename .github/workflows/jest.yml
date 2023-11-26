@@ -1,0 +1,41 @@
+name: linter & jest test
+
+on: 
+  - push
+  - pull_request
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        node-version: version: '16.x'
+        os: ubuntu-latest
+
+    steps:
+     - uses: actions/checkout@v3
+
+     - name: Use Node.js ${{ matrix.node-version }}
+       uses: actions/setup-node@v3
+       with:
+         node-varsion: ${{ matrix.node-version }}
+         cache: 'npm'
+
+     - name: install
+       run: make install
+     
+     - name: run linter
+       run: make lint
+
+     - name: run test
+       run : make test
+
+     - name: Test & publish code coverage
+       Publis code coverage
+       uses: paambaati/codeclimate-action@v3.0.0
+       env:
+         CC_TEST_REPORTER_ID: ${{ CC_TEST_REPORTER_ID }}
+       with: 
+         civerageCommand: make test-coverage
+         debug: true
