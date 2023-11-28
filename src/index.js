@@ -1,54 +1,33 @@
 import fs from 'fs';
 import path from 'path';
+import parser from './parsers.js';
+import compared from './compareData.js';
 
-const makeFullPath = (filepath) => path.resolve(process.cwd(), '__fixtures__', filepath);
-const feadFile = (filepath) => fs.readFileSync(makeFullPath(filepath), 'utf-8');
+const makeFullPath = (filename) => path.resolve(process.cwd(), '__fixtures__', filename);
+const readFile = (filename) => fs.readFileSync(makeFullPath(filename), 'utf-8');
 
-const genDiff = (filepath1, filepath2) => {
-  const parsedFile1 = JSON.parse(feadFile(filepath1));
-  const parsedFile2 = JSON.parse(feadFile(filepath2));
+const genDiff = (filename1, filename2) => {
+  const data1 = readFile(filename1);
+  const data2 = readFile(filename2);
+  const parsedFile1 = parser(data1, path.extname(filename1).slice(1));
+  const parsedFile2 = parser(data2, path.extname(filename2).slice(1));
 
-  const keys1 = Object.keys(parsedFile1).sort();
-  const keys2 = Object.keys(parsedFile2).sort();
-  const uniqKeys = [...new Set(keys1.concat(keys2))];
-  const result = uniqKeys.map((key) => {
-    let line;
-    if (Object.hasOwn(parsedFile1, key) && Object.hasOwn(parsedFile2, key)) {
-      if (parsedFile1[key] === parsedFile2[key]) {
-        line = { status: 'unchanged', key };
-      } else {
-        line = { status: 'changed', key };
-      }
+  const getDifStatus = compared(parsedFile1, parsedFile2);
+  const result = getDifStatus.map(({
+    status, key, valueBefore, valueAfter,
+  }) => {
+    switch (status) {
+      case 'added': return `  + ${key}: ${valueAfter}`;
+      case 'deleted': return `  - ${key}: ${valueBefore}`;
+      case 'unchanged': return `    ${key}: ${valueBefore}`;
+      case 'changed': return `  - ${key}: ${valueBefore}\n  + ${key}: ${valueAfter}`;
+      default:
+        throw new Error(`Unnamed ${status}`);
     }
-    if (!Object.hasOwn(parsedFile1, key)) {
-      line = { status: 'added', key };
-    }
-    if (!Object.hasOwn(parsedFile2, key)) {
-      line = { status: 'deleted', key };
-    }
-    return line;
   })
-    .map(({ status, key }) => {
-      switch (status) {
-        case 'added': {
-          return `  + ${key}: ${parsedFile2[key]}`;
-        }
-        case 'deleted': {
-          return `  - ${key}: ${parsedFile1[key]}`;
-        }
-        case 'unchanged': {
-          return `    ${key}: ${parsedFile1[key]}`;
-        }
-        case 'changed': {
-          return `  - ${key}: ${parsedFile1[key]}\n  + ${key}: ${parsedFile2[key]}`;
-        }
-        default:
-          throw new Error(`Unnamed ${status}`);
-      }
-    })
     .join('\n');
 
-  return `{\n${result}\n}`;
+  return `{\n${result}\n}\n`;
 };
 
 export default genDiff;
