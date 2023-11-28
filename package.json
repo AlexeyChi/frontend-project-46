@@ -17,7 +17,8 @@
   "author": "AlexeyChi",
   "license": "ISC",
   "dependencies": {
-    "commander": "^11.1.0"
+    "commander": "^11.1.0",
+    "js-yaml": "^4.1.0"
   },
   "devDependencies": {
     "eslint": "^8.54.0",
