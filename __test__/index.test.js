@@ -10,12 +10,11 @@ const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', 
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
 const formats = ['json', 'yml'];
-const data = readFile('etalonJSON.txt');
-const expected = JSON.stringify(data);
+const expected = readFile('etalonJSON.txt');
 
 test.each(formats)('testing formates', (format) => {
   const data1 = `file1.${format}`;
   const data2 = `file2.${format}`;
-  const result = JSON.stringify(genDiff(data1, data2));
+  const result = genDiff(data1, data2);
   expect(result).toEqual(expected);
 });
