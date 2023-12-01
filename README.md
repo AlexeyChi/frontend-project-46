@@ -19,8 +19,8 @@ configuration files.
 
 ### Play Demo
 
-##### _Flat file comparison (JSON)_
-[![asciicast](https://asciinema.org/a/NuFvJNfCpknKd11TJiIxOpBPx.svg)](https://asciinema.org/a/NuFvJNfCpknKd11TJiIxOpBPx)
+##### _File comparison  (stylish format)_
+[![asciicast](https://asciinema.org/a/XcG1FD2QEgO2ujSSosVXYhzTS.svg)](https://asciinema.org/a/XcG1FD2QEgO2ujSSosVXYhzTS)
 
 ##### _Flat file comparison (YML)_
 [![asciicast](https://asciinema.org/a/qWXENxJ2rpVhle3XTTzxlgX5n.svg)](https://asciinema.org/a/qWXENxJ2rpVhle3XTTzxlgX5n)
