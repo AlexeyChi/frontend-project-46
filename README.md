@@ -1,6 +1,5 @@
 # Difference Calculator
----
-### Hexlet tests and linter status:
+
 [![Actions 
 Status](https://github.com/AlexeyChi/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/AlexeyChi/frontend-project-46/actions) [![linter & jest 
 test](https://github.com/AlexeyChi/frontend-project-46/actions/workflows/jest.yml/badge.svg)](https://github.com/AlexeyChi/frontend-project-46/actions/workflows/jest.yml) 
@@ -19,8 +18,4 @@ configuration files.
 
 ### Play Demo
 
-##### _File comparison  (stylish format)_
-[![asciicast](https://asciinema.org/a/XcG1FD2QEgO2ujSSosVXYhzTS.svg)](https://asciinema.org/a/XcG1FD2QEgO2ujSSosVXYhzTS)
-
-##### _Flat file comparison (YML)_
-[![asciicast](https://asciinema.org/a/qWXENxJ2rpVhle3XTTzxlgX5n.svg)](https://asciinema.org/a/qWXENxJ2rpVhle3XTTzxlgX5n)
+[![asciicast](https://asciinema.org/a/vkJporXZnwJbLvvpugQEPLF0s.svg)](https://asciinema.org/a/vkJporXZnwJbLvvpugQEPLF0s)
