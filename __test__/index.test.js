@@ -33,7 +33,7 @@ const options = [
     file1: 'file1.yaml', file2: 'file2.yaml', format: 'plain', expected: plainData,
   },
   {
-    file1: 'file1.yml', file2: 'file2.json', format: 'json', expected: jsonData,
+    file1: 'file1.json', file2: 'file2.json', format: 'json', expected: jsonData,
   },
   {
     file1: 'file1.yml', file2: 'file2.yml', format: 'json', expected: jsonData,

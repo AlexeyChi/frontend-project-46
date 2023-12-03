@@ -7,7 +7,7 @@ import formatters from './formatters/index.js';
 const makeFullPath = (filename) => path.resolve(process.cwd(), '__fixtures__', filename);
 const readFile = (filename) => fs.readFileSync(makeFullPath(filename), 'utf-8');
 
-const genDiff = (filename1, filename2, formatName) => {
+const genDiff = (filename1, filename2, formatName = 'stylish') => {
   const data1 = readFile(filename1);
   const data2 = readFile(filename2);
   const parsedFile1 = parser(data1, path.extname(filename1).slice(1));
