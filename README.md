@@ -7,10 +7,10 @@ test](https://github.com/AlexeyChi/frontend-project-46/actions/workflows/jest.ym
 Coverage](https://api.codeclimate.com/v1/badges/e7d36122bdf7ff541b17/test_coverage)](https://codeclimate.com/github/AlexeyChi/frontend-project-46/test_coverage)
 
 ### Description
-A difference calculator is a program that determines the difference between two data structures (JSON & YML).
+A difference calculator is a program that determines the difference between two data structures (JSON & YAML).
 
 ##### Utility features:
- - Supports different input formats: yml, json
+ - Supports different input formats: yaml, json
  - Report generation as plain text, stylish(default) and json
 
 ### Installation
