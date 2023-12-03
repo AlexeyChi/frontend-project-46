@@ -10,8 +10,7 @@ const makeCurrValue = (value) => {
 
 const plain = (tree) => {
   const iter = (node, path) => {
-    const lines = node.flatMap((line) => {
-      const { status, key, value } = line;
+    const lines = node.flatMap(({ status, key, value }) => {
       const filePath = _.isArray(value) ? `${path}${key}.` : `${path}${key}`;
       switch (status) {
         case 'nested':

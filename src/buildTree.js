@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import _ from 'lodash';
 
 const getChildren = (node, tree1, tree2) => [_.get(tree1, node, null), _.get(tree2, node, null)];
