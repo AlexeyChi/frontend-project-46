@@ -9,15 +9,20 @@ const PARAMETRS = {
   leftShiftCount: 2,
 };
 
+const makeIndents = (depth) => {
+  const replacer = (PARAMETRS.spaceCount * depth) + PARAMETRS.leftShiftCount;
+  const indent = PARAMETRS.space.repeat(replacer);
+  const outIndent = PARAMETRS.space.repeat(PARAMETRS.spaceCount * depth);
+  return [indent, outIndent];
+};
+
 const stylish = (tree) => {
   const iter = (node, depth) => {
-    const replacer = (PARAMETRS.spaceCount * depth) + PARAMETRS.leftShiftCount;
-    const indent = PARAMETRS.space.repeat(replacer);
-    const outIndent = PARAMETRS.space.repeat(PARAMETRS.spaceCount * depth);
-
     if (!_.isArray(node)) {
       return _.isObject(node) ? iter(Object.entries(node), depth) : node;
     }
+    const [indent, outIndent] = makeIndents(depth);
+
     const lines = node.map((line) => {
       if (_.isArray(line)) {
         const [key, value] = line;
