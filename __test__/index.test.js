@@ -21,6 +21,8 @@ const options = [
   { file1: 'json', file2: 'yml', format: 'json' },
 ];
 
+const detaultFormat = 'stylish';
+
 test.each(options)('testing formates', (option) => {
   const data1 = `file1.${option.file1}`;
   const data2 = `file2.${option.file2}`;
@@ -28,4 +30,8 @@ test.each(options)('testing formates', (option) => {
   const expected = readFile(etalonFile);
   const result = genDiff(data1, data2, option.format);
   expect(result).toEqual(expected);
+
+  const detaultDiff = genDiff(data1, data2, detaultFormat);
+  const defaultResult = readFile('etalonSTYLISH.txt');
+  expect(detaultDiff).toEqual(defaultResult);
 });
