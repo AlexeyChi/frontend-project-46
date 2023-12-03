@@ -16,6 +16,9 @@ const options = [
   { file1: 'json', file2: 'json', format: 'plain' },
   { file1: 'yml', file2: 'yml', format: 'plain' },
   { file1: 'json', file2: 'yml', format: 'plain' },
+  { file1: 'json', file2: 'json', format: 'json' },
+  { file1: 'yml', file2: 'yml', format: 'json' },
+  { file1: 'json', file2: 'yml', format: 'json' },
 ];
 
 test.each(options)('testing formates', (option) => {
