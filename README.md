@@ -7,15 +7,21 @@ test](https://github.com/AlexeyChi/frontend-project-46/actions/workflows/jest.ym
 Coverage](https://api.codeclimate.com/v1/badges/e7d36122bdf7ff541b17/test_coverage)](https://codeclimate.com/github/AlexeyChi/frontend-project-46/test_coverage)
 
 ### Description
-A difference calculator is a program that determines the difference between two data structures. This is a popular task, for which there are many 
-online services, for example [http://www.jsondiff.com](http://www.jsondiff.com) A similar mechanism is used when outputting tests or 
-automatically tracking changes in 
-configuration files.
+A difference calculator is a program that determines the difference between two data structures (JSON & YML).
 
 ##### Utility features:
- - Supports different input formats: yaml, json
- - Report generation as plain text, stylish and json
+ - Supports different input formats: yml, json
+ - Report generation as plain text, stylish(default) and json
+
+### Installation
+`make install`
+
+### Quick start
+`gendiff [optinon] <filename1> <filename2>`
+
+### Help
+`gendiff -h`
 
 ### Play Demo
 
-[![asciicast](https://asciinema.org/a/vkJporXZnwJbLvvpugQEPLF0s.svg)](https://asciinema.org/a/vkJporXZnwJbLvvpugQEPLF0s)
+[![asciicast](https://asciinema.org/a/kno3G7mBKQqWmtCHqaHjeybUi.svg)](https://asciinema.org/a/kno3G7mBKQqWmtCHqaHjeybUi)
