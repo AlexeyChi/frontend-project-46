@@ -14,41 +14,20 @@ const plainData = readFile('etalonPLAIN.txt');
 const jsonData = readFile('etalonJSON.txt');
 
 const options = [
-  {
-    file1: 'file1.json', file2: 'file2.json', format: 'stylish', expected: stylishData,
-  },
-  {
-    file1: 'file1.yml', file2: 'file2.yml', format: 'stylish', expected: stylishData,
-  },
-  {
-    file1: 'file1.yaml', file2: 'file2.yaml', format: 'stylish', expected: stylishData,
-  },
-  {
-    file1: 'file1.json', file2: 'file2.json', format: 'plain', expected: plainData,
-  },
-  {
-    file1: 'file1.yml', file2: 'file2.yml', format: 'plain', expected: plainData,
-  },
-  {
-    file1: 'file1.yaml', file2: 'file2.yaml', format: 'plain', expected: plainData,
-  },
-  {
-    file1: 'file1.json', file2: 'file2.json', format: 'json', expected: jsonData,
-  },
-  {
-    file1: 'file1.yml', file2: 'file2.yml', format: 'json', expected: jsonData,
-  },
-  {
-    file1: 'file1.yaml', file2: 'file2.yaml', format: 'json', expected: jsonData,
-  },
+  { format1: 'json', format2: 'json' },
+  { format1: 'json', format2: 'yml' },
+  { format1: 'json', format2: 'yaml' },
+  { format1: 'yml', format2: 'yml' },
+  { format1: 'yml', format2: 'yaml' },
+  { format1: 'yaml', format2: 'yaml' },
 ];
 
-const detaultFormat = 'stylish';
+test.each(options)('testing formats', (option) => {
+  const filepath1 = getFixturePath(`file1.${option.format1}`);
+  const filepath2 = getFixturePath(`file2.${option.format2}`);
 
-test.each(options)('testing formates', (option) => {
-  const result = genDiff(option.file1, option.file2, option.format);
-  expect(result).toEqual(option.expected);
-
-  const detaultDiff = genDiff(option.file1, option.file2, detaultFormat);
-  expect(detaultDiff).toEqual(stylishData);
+  expect(genDiff(filepath1, filepath2, 'stylish')).toEqual(stylishData);
+  expect(genDiff(filepath1, filepath2, 'plain')).toEqual(plainData);
+  expect(genDiff(filepath1, filepath2, 'json')).toEqual(jsonData);
+  expect(genDiff(filepath1, filepath2)).toEqual(stylishData);
 });
