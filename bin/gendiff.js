@@ -8,7 +8,7 @@ program
   .version('1.0.0')
   .helpOption('-h, --help', 'output usage information')
   .arguments('<filepath1> <filepath2>')
-  .option('-f, --format <type>', 'output format', 'stylish')
+  .option('-f, --format <type>', 'output format, available: json, plain, stylish', 'stylish')
   .action((filepath1, filepath2, option) => {
     console.log(genDiff(filepath1, filepath2, option.format));
   });
