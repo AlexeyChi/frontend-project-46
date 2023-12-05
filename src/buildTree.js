@@ -7,13 +7,15 @@ const buildTree = (obj1, obj2) => {
   return uniqKeys.flatMap((key) => {
     const [value1, value2] = getChildren(key, obj1, obj2);
     if (_.isObject(value1) && _.isObject(value2)) {
-      return { status: 'nested', key, value: buildTree(value1, value2) };
+      return { status: 'nested', key, children: buildTree(value1, value2) };
     }
     if (value1 === value2) {
       return { status: 'unchanged', key, value: value1 };
     }
     if (_.has(obj1, key) && _.has(obj2, key)) {
-      return { status: 'changed', key, value: { valBefore: value1, valAfter: value2 } };
+      return {
+        status: 'changed', key, valBefore: value1, valAfter: value2,
+      };
     }
     if (!value1) {
       return { status: 'added', key, value: value2 };
