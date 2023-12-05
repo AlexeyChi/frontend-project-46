@@ -24,4 +24,4 @@ A difference calculator is a program that determines the difference between two 
 
 ### Play Demo
 
-[![asciicast](https://asciinema.org/a/kno3G7mBKQqWmtCHqaHjeybUi.svg)](https://asciinema.org/a/kno3G7mBKQqWmtCHqaHjeybUi)
+[![asciicast](https://asciinema.org/a/oBWmknGqrdwf1VwDAwKV9wtbq.svg)](https://asciinema.org/a/oBWmknGqrdwf1VwDAwKV9wtbq)
