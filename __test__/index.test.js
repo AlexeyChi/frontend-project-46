@@ -9,9 +9,9 @@ const __dirname = path.dirname(__filename);
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
-const stylishData = readFile('etalonSTYLISH.txt');
-const plainData = readFile('etalonPLAIN.txt');
-const jsonData = readFile('etalonJSON.txt');
+const stylishData = readFile('etalonSTYLISH.txt').trim();
+const plainData = readFile('etalonPLAIN.txt').trim();
+const jsonData = readFile('etalonJSON.txt').trim();
 
 const options = [
   { format1: 'json', format2: 'json' },
