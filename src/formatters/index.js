@@ -10,7 +10,7 @@ const formatters = (data, format) => {
     case 'json':
       return JSON.stringify(data);
     default:
-      throw new Error('Unknown format, please try again');
+      throw new Error(`Error: Unknown ${format}, please try again`);
   }
 };
 

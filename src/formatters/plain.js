@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-const makeCurrValue = (value) => {
+const formatValue = (value) => {
   if (typeof value === 'string') {
     return `'${value}'`;
   }
@@ -20,11 +20,11 @@ const plain = (tree, path = '') => {
       case 'nested':
         return plain(children, `${path}${key}.`);
       case 'added':
-        return `Property '${path}${key}' was added with value: ${makeCurrValue(value)}`;
+        return `Property '${path}${key}' was added with value: ${formatValue(value)}`;
       case 'deleted':
         return `Property '${path}${key}' was removed`;
       case 'changed': {
-        return `Property '${path}${key}' was updated. From ${makeCurrValue(valBefore)} to ${makeCurrValue(valAfter)}`;
+        return `Property '${path}${key}' was updated. From ${formatValue(valBefore)} to ${formatValue(valAfter)}`;
       }
       case 'unchanged': return [];
       default:

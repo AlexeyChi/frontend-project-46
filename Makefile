@@ -13,4 +13,3 @@ test-coverage:
 publish:
 	npm publish --dry-run
 
-.PHONY: test

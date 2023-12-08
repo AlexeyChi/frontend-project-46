@@ -13,7 +13,12 @@ A difference calculator is a program that determines the difference between two 
  - Supports different input formats: yaml, json
  - Report generation as plain text, stylish(default) and json
 
+
+
 ### Installation
+Clone this repository on your mashine with SSH key:
+`git clone git@github.com:AlexeyChi/frontend-project-46.git`
+
 `make install`
 
 ### Quick start
