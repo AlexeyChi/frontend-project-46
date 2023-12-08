@@ -16,7 +16,8 @@ A difference calculator is a program that determines the difference between two 
 
 
 ### Installation
-Clone this repository on your mashine with SSH key:
+Clone this repository to your mashine with SSH key.
+
 `git clone git@github.com:AlexeyChi/frontend-project-46.git`
 
 `make install`
